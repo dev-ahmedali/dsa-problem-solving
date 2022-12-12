@@ -44,9 +44,17 @@ class LinkedList {
       let prevNode = this.findNode(position - 1);
       node.next = prevNode.next;
       prevNode.next = node;
-      this.length++
+      this.length++;
       console.log({ prevNode: prevNode.value });
     }
+  }
+
+  remove(position) {
+    let node = this.findNode(position),
+      prevNode = this.findNode(position - 1);
+
+    prevNode.next = node.next;
+    this.length--;
   }
 
   findNode(n) {
@@ -65,11 +73,16 @@ let list = new LinkedList(100);
 list.appned(200);
 list.appned(300);
 list.appned(400);
+list.appned(9000);
 list.prepend(50);
+list.prepend(5000);
 
 list.appendAt(-5, 1);
 list.appendAt(1000, 7);
 list.appendAt(70, 3);
+list.remove(2);
+// list.remove(5);
+// list.remove(6);
 
 list.print();
 // console.log(list.head);
