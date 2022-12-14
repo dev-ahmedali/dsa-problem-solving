@@ -48,7 +48,7 @@ class LinkedList {
       console.log({ prevNode: prevNode.value });
     }
   }
-
+//  remove linked list
   remove(position) {
     let node = this.findNode(position),
       prevNode = this.findNode(position - 1);
