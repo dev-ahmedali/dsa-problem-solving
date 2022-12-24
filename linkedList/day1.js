@@ -20,8 +20,8 @@ class LinkedList {
   }
 
   prepend(value) {
-    let node = new Node(value, this.head);
-    // node.next = this.head
+    let node = new Node(value);
+    node.next = this.head
     this.head = node;
     this.length++;
   }
@@ -29,7 +29,6 @@ class LinkedList {
   print() {
     let data = this.head;
     while (data != null) {
-      console.log(data.value);
       data = data.next;
     }
   }

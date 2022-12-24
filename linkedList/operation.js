@@ -38,15 +38,7 @@ class Node {
       return false; // data not found
   }
 
-  // Driver function to test
-  // the above functions
-   
 
-      // Start with the empty list
-      /*
-        Use push() to construct below
-        list 14->21->11->30->10
-       */
       push(10);
       push(30);
       push(11);
