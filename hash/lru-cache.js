@@ -44,7 +44,7 @@ class DoublyLinkedList {
     this.tail = new ListNode();
     this.connect(this.head, this.tail);
   }
-  add() {
+  add(node) {
     this.connect(node, this.head.next);
     this.connect(this.head.node);
   }
