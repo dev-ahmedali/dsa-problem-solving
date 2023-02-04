@@ -6,17 +6,16 @@ function mergeSort(arr, l, r) {
     let mid = Math.floor((l + r) / 2);
     mergeSort(arr, l, mid); //left
     mergeSort(arr, mid + 1, r); //right
-
     mergeSubArr(arr, l, mid, r);
   }
 }
 
 function mergeSubArr(arr, l, mid, r) {
   let i = l;
-  let r = mid + 1;
+  let j = mid + 1;
   let k = i;
 
-  while (i <= mid && j <= r) {
+  while(i <= mid || j <= r) {
     if (arr[i] <= arr[j]) {
       newArr[k] = arr[i];
       i++;
@@ -30,15 +29,15 @@ function mergeSubArr(arr, l, mid, r) {
   // copy rest values
   if (i > mid) {
     // copy j values
-    while (i <= mid) {
-      newArr[k] = arr[i];
-      i++;
+    while (j <= r) {
+      newArr[k] = arr[j];
+      j++;
       k++;
     }
   } else {
-    while (i <= r) {
-      newArr[k] = arr[j];
-      j++;
+    while (i <= mid) {
+      newArr[k] = arr[i];
+      i++;
       k++;
     }
   }
@@ -50,3 +49,4 @@ function mergeSubArr(arr, l, mid, r) {
 }
 
 mergeSort(arr, 0, arr.length - 1);
+console.log(arr);
