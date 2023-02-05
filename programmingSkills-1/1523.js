@@ -9,5 +9,7 @@ var countOdds = function(low, high) {
         high = high-1;
     }
     count = Math.floor((high-low)/2+1);
-    return count
+    return count;
 };
+
+
