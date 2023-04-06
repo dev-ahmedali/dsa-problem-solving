@@ -1,13 +1,22 @@
 function partition(arr, l, r) {
   let pivot = arr[l];
+  // count small data
   let count = 0;
   for (let i = l; i <= r; i++) {
     if (arr[i] < pivot) {
       count++;
     }
   }
+  console.log(arr);
+  console.log(count);
+  console.log(pivot);
+
+  let temp = arr[l];
+  arr[l] = arr[count];
+  arr[count] = temp;
 }
 
+ 
 function quickSort(arr, l, r) {
   if (l < r) {
     let p = partition(arr, l, r);
