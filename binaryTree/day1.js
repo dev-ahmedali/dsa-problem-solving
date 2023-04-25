@@ -45,7 +45,27 @@ class binaryTree {
         current = current.right;
       }
     }
-    return "Not found"
+    return "Not found";
+  }
+
+  predecessor() {
+    let current = this.root.left;
+    while (true) {
+      if (!current.right) {
+        return current.value;
+      }
+      current = current.right;
+    }
+  }
+
+  successor() {
+    let current = this.root.right;
+    while (true) {
+      if (!current.left) {
+        return current.value;
+      }
+      current = current.left;
+    }
   }
 }
 
@@ -55,6 +75,6 @@ tree.insert(20);
 tree.insert(9);
 tree.insert(8);
 tree.insert(90);
-console.log(tree.search(10))
-
-console.log(tree.root);
+console.log(tree.search(10));
+console.log(tree.predecessor());
+console.log(tree.successor());
